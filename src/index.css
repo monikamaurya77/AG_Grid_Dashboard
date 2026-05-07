@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:          #f5f3ee;
+  --bg2:         #ece9e2;
+  --surface:     #ffffff;
+  --border:      #e0dbd0;
+  --border2:     #ccc7bb;
+  --ink:         #1a1714;
+  --ink2:        #5c574e;
+  --ink3:        #9b9589;
+  --accent:      #c84b31;
+  --accent2:     #e8a87c;
+  --accent-pale: #fdf1ec;
+  --green:       #2d6a4f;
+  --green-pale:  #eaf4ef;
+  --yellow:      #d4a017;
+  --yellow-pale: #fdf8e8;
+  --blue:        #2563a8;
+  --blue-pale:   #eef3fb;
+  --dept-eng:    #2563a8;
+  --dept-mkt:    #c84b31;
+  --dept-sales:  #2d6a4f;
+  --dept-hr:     #7c3aed;
+  --dept-fin:    #d4a017;
+  --font-display: 'DM Serif Display', serif;
+  --font-body:    'Outfit', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+  --radius:       10px;
+  --radius-sm:    6px;
+  --radius-lg:    16px;
+  --shadow:       0 2px 12px rgba(26,23,20,0.08);
+  --shadow-md:    0 4px 24px rgba(26,23,20,0.12);
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── AG Grid theme overrides ── */
+.ag-theme-custom {
+  --ag-background-color: var(--surface);
+  --ag-header-background-color: var(--bg);
+  --ag-odd-row-background-color: var(--surface);
+  --ag-row-hover-color: var(--accent-pale);
+  --ag-selected-row-background-color: #fdf1ec;
+  --ag-border-color: var(--border);
+  --ag-cell-horizontal-border: solid var(--border);
+  --ag-header-column-separator-color: var(--border2);
+  --ag-font-family: var(--font-body);
+  --ag-font-size: 13px;
+  --ag-header-height: 44px;
+  --ag-row-height: 56px;
+  --ag-cell-horizontal-padding: 16px;
+  --ag-icon-font-family: agGridAlpine;
+  --ag-foreground-color: var(--ink);
+  --ag-secondary-foreground-color: var(--ink2);
+  --ag-header-foreground-color: var(--ink2);
+  --ag-range-selection-border-color: var(--accent);
+  --ag-input-focus-border-color: var(--accent);
+  --ag-checkbox-checked-color: var(--accent);
+  --ag-checkbox-unchecked-color: var(--border2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow);
+}
+
+.ag-theme-custom .ag-header {
+  border-bottom: 2px solid var(--border2) !important;
+}
+
+.ag-theme-custom .ag-header-cell-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--ink3);
+}
+
+.ag-theme-custom .ag-row {
+  border-bottom: 1px solid var(--border) !important;
+  transition: background 0.15s;
+}
+
+.ag-theme-custom .ag-row-last {
+  border-bottom: none !important;
+}
+
+.ag-theme-custom .ag-cell {
+  display: flex;
+  align-items: center;
+}
+
+.ag-theme-custom .ag-paging-panel {
+  border-top: 1px solid var(--border) !important;
+  font-size: 12px;
+  color: var(--ink2);
+  font-family: var(--font-body);
+  height: 44px;
+}
+
+.ag-theme-custom .ag-paging-button {
+  color: var(--ink2);
+}
+
+.ag-theme-custom .ag-icon {
+  color: var(--ink3);
+}
+
+.ag-theme-custom .ag-filter-toolpanel-header,
+.ag-theme-custom .ag-filter-toolpanel-search {
+  background: var(--bg);
+}
+
+.ag-theme-custom .ag-menu {
+  border: 1px solid var(--border2);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius);
+}
+
+/* scrollbar */
+.ag-theme-custom ::-webkit-scrollbar { width: 6px; height: 6px; }
+.ag-theme-custom ::-webkit-scrollbar-track { background: var(--bg); }
+.ag-theme-custom ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+/* animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.fade-in { animation: fadeInUp 0.4s ease both; }
+.fade-in-1 { animation: fadeInUp 0.4s 0.05s ease both; }
+.fade-in-2 { animation: fadeInUp 0.4s 0.10s ease both; }
+.fade-in-3 { animation: fadeInUp 0.4s 0.15s ease both; }
+.fade-in-4 { animation: fadeInUp 0.4s 0.20s ease both; }
+.count-up  { animation: countUp 0.5s 0.25s ease both; }
